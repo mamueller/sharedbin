@@ -14,17 +14,19 @@
 	#### create the second window
 	tmux split-window -h -t "${session_name}"
 	
-  ### start vi in first pane	
 	tmux select-pane -t 0
 	if [ -d tests ];then
+		### start vi in first pane	
 		tmux send-keys "vim -c 'vnew |lcd pkg/R|edit .|wincmd l|lcd tests|edit .'" C-m
+		tmux send-keys -t 1 'cd tests' C-m 
 	fi 
 	if [ -d pkg/inst/tests ];then
+		### start vi in first pane	
 		tmux send-keys "cd pkg && vim -c 'vnew |lcd R|edit .|wincmd l|lcd inst/tests|edit .'" C-m
+		tmux send-keys  -t 1 'cd pkg/inst ' C-m
 	fi 
 
 	tmux select-pane -t 1
-	tmux send-keys 'cd pkg/inst ' C-m
 
 	##### create the third window
 	#tmux split-window -h -t ${session_name}
