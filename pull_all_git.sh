@@ -1,8 +1,8 @@
 #!/bin/bash
 startDir=${HOME}
 function git_pull {
-	echo $(pwd)
 	cd $1
+	echo $(pwd)
 	git pull
 	cd ${startDir}
 }
