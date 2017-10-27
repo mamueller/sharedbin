@@ -4,6 +4,7 @@ function git_pull {
 	cd $1
 	echo $(pwd)
 	git pull
+	git status
 	cd ${startDir}
 }
 for repo in configfiles sharedbin R6Unit linkeddocs SoilR-exp;do
