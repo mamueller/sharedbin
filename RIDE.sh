@@ -23,7 +23,7 @@
 	if [ -d pkg/inst/tests ];then
 		### start vi in first pane	
 		tmux send-keys "cd pkg && vim -c 'vnew |lcd R|edit .|wincmd l|lcd inst/tests|edit .'" C-m
-		tmux send-keys  -t 1 'cd pkg/inst ' C-m
+		tmux send-keys  -t 1 'cd pkg/inst/tests ' C-m
 	fi 
 
 	tmux select-pane -t 1
